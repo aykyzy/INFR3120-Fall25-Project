@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f8f8f8;
+  color: #222;
+  line-height: 1.5;
+}
+
+/* Header */
+header.site {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+header.site .logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+/* Hero section (index.html) */
+.hero {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #222;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #eee;
+}
+
+.btn--ghost {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.btn--ghost:hover {
+  background-color: #0056b3;
+}
+
+/* Forms (create.html) */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button.btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
+button.btn:hover {
+  background-color: #0056b3;
+}
+
+/* Table (index and list pages) */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+/* Simple alignment helpers */
+.center {
+  text-align: center;
+}

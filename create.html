@@ -1,0 +1,39 @@
+<!--Stating document type-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="style.css">
+        <title>Create New Survey | SurveySimple</title>
+    </head>
+    <body>
+        <header class="site">
+            <div>
+                <img src="logo.png">
+                <h1>SurveySimple</h1>
+            </div>
+        </header>
+        <div>
+            <h1>Create New Survey</h1>
+            <form id="surveyForm">
+            <label for="title">Survey Title:</label>
+            <input type="text" id="title" name="title" placeholder="e.g., Student Feedback Survey" required>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="3" placeholder="Describe what this survey is about..." required></textarea>
+
+            <label for="questions">Questions (separate with commas):</label>
+            <textarea id="questions" name="questions" rows="3" placeholder="e.g., How satisfied are you?, What could be improved?" required></textarea>
+
+            <div class="actions">
+            <button type="submit" class="btn">Submit Survey</button>
+            </div>  
+            </form>
+            
+            <p>
+                <a class="link" href="index.html">Back to Home</a>
+            </p>
+        </div>
+    </body>
+</html>
