@@ -103,7 +103,7 @@ router.post('/surveys/:id/responses', async (req, res) => {
 
 
 //survey results
-router.get('/surveys/:id/results', async (req, res) => {
+router.get ('/surveys/:id/results', async (req, res) => {
     //extracts the survey id from the URL
     const surveyID = req.params.id;
 
