@@ -135,9 +135,13 @@ router.get ('/surveys/:id/results', async (req, res) => {
              if (counts[a.questionId] && counts[a.questionId][a.choiceId] !== undefined) {
                 //increase the counts for that choice by 1
                 counts[a.questionId][a.choiceId] += 1;
+                
         }
     }
 }
 
 //retrun the final survey info, number of counts and number of responses
 res.json({ survey, total: responses.length, counts });
+
+});
+module.exports = router;
