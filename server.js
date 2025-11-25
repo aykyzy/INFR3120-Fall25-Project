@@ -3,6 +3,7 @@ const path = require('path');
 const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config();
+const authRoutes = require("./routes/auth");
 
 const app = express();
 
@@ -32,6 +33,8 @@ app.use(
     }
   })
 );
+//use auth routes for all rotues that start with /
+app.use("/", authRoutes);
 
 // Make currentUser available in all pages (your part)
 app.use((req, res, next) => {

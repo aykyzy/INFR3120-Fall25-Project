@@ -1,0 +1,62 @@
+<!----Indicates that this is an html document-->
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Register</title></head>
+<body>
+<!---Navbar links to different pages-->
+<nav>
+<a href="/index.html">Home</a>
+<a href="/create.html">Create Survey</a>
+<a href="/list.html">List Surveys</a>
+
+<!---Shows if the user is not logged in-->
+<a href="/login" id="login-link">Login</a>
+
+<!--logout button-->
+<form id="logout-form" method="POST" action="/logout" style="display:none;display:inline;margin:0;padding:0;">
+<button type="submit">Logout</button>
+</form>
+</nav>
+
+<!----Registration form heading-->
+<h1>Register</h1>
+
+<!--The registration form that is sent to the register-->
+<form method="POST" action="/register">
+<!--username input header-->
+<label>Username</label>
+<!---Username input-->
+<input name="username" required>
+<!--Paswword input header-->
+<label>Password</label>
+<!---Password input-->
+<input type="password" name="password" required>
+<!--Confirm password header-->
+<label>Confirm Password</label>
+<!--confirm password input-->
+<input type="password" name="confirmPassword" required>
+
+
+<!----submit form button-->
+<button type="submit">Create Account</button>
+</form>
+
+<!---Clickable link incase the user already has an account-->
+<p>Already have an account? <a href="/login">Login</a></p>
+
+
+<!----Grabs existing information of the user-->
+<script>
+fetch('/auth/status')
+.then(r=>r.json())
+.then(d=>{
+//If logged in: hide Login link, show Logout button
+document.getElementById("login-link").style.display = d.loggedIn?"none":"inline";
+document.getElementById("logout-form").style.display = d.loggedIn?"inline":"none";
+});
+
+
+
+</script>
+</body>
+</html>
