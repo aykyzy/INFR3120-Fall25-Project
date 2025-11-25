@@ -9,6 +9,9 @@ const router = express.Router();
 const Survey = require('../models/Survey');
 const Response = require('../models/Response');
 
+// added for the auth — import login protection middleware
+const { requireLogin } = require('../middleware/auth');
+
 //Creates a get route for Surveys
 router.get ('/surveys', async (req, res) => {
     // Filters the surveys based on query parameter. if isActive is in the query include {isactive=true}
@@ -30,7 +33,7 @@ router.get('/surveys/:id', async (req, res) => {
 });
 
 //post route for creating a new survey
-router.post('/surveys', async (req, res) => {
+router.post('/surveys', requireLogin, async (req, res) => {
     //extract survey from the body of the request
     const { title, description, questions, isActive } = req.body;
     //if quetions are not provided set to empty array
@@ -39,7 +42,7 @@ router.post('/surveys', async (req, res) => {
   res.status(201).json(survey);
 });
 //update an existing survey using its ID
-router.put('/surveys/:id', async (req, res) => {
+router.put('/surveys/:id', requireLogin, async (req, res) => {
     //Extract survey details from the request body
       const { title, description, questions, isActive } = req.body;
         //A database query to find the survey using its id and update the details
@@ -60,7 +63,7 @@ router.put('/surveys/:id', async (req, res) => {
 });
 
 // Delete survey by using its ID
-router.delete('/surveys/:id', async (req, res) => {
+router.delete('/surveys/:id', requireLogin, async (req, res) => {
     //extract the survey ID fromt theu URl
     const surveyID = req.params.id; 
     //any responses linked t the survey will be deleted

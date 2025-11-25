@@ -6,13 +6,39 @@ require('dotenv').config();
 
 const app = express();
 
+// Auth additions
+const session = require("express-session");
+const MongoStore = require("connect-mongo");
+const User = require("./models/Users"); 
+
+
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
 //Everything in /public as a static file
 //Tells express to serve any file inside public dir
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET || "defaultSecret",
+    resave: false,
+    saveUninitialized: false,
+    store: MongoStore.create({
+      mongoUrl: process.env.MONGODB_URI,
+      collectionName: "sessions",
+    }),
+    cookie: {
+      maxAge: 1000 * 60 * 60 * 2 // 2 hours
+    }
+  })
+);
 
+// Make currentUser available in all pages (your part)
+app.use((req, res, next) => {
+  res.locals.currentUser = req.session.user || null;
+  next();
+});
+//
 const apiRoutes = require('./routes/api');
 app.use('/api', apiRoutes);
 
