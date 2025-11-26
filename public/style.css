@@ -152,3 +152,27 @@ th, td {
   color:red /*register*/
 }
 
+/* --- Shared styling for ALL header links --- */
+.header-link {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: bold;
+  display: inline-block;
+  transition: transform 0.5s, color 0.5s;
+  font-size: 1.1rem;
+}
+
+/* --- Hover effect for ALL links --- */
+.header-link:hover {
+  transform: scale(1.2);
+  color: #00bfff;
+}
+
+/* --- Header container background --- */
+.Home-indexcontainer {
+  align-items: center;
+  justify-content: space-between;
+  background-color: black; /* pure black header */
+  padding: 15px;
+}

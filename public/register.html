@@ -24,30 +24,31 @@
                 </form>
             </div>
 </nav>
-
+<!---centers the container and all its items-->
 <div class = "container justify-content-center align-items-center ">
+    <!--css styling sets cusotm width and adds padding so login input appear in the middle of page-->
     <div style="width: 850px; padding-left: 420px; padding-top: 120px;">
-<!----Registration form heading-->
+<!----Registration form heading with margin at the top and bottom-->
 <h1 class="text-center mt-5 mb-3">Register</h1>
 
 <!--The registration form that is sent to the register-->
 <form method="POST" action="/register">
 <!--username input header-->
 
-
+<!---class that makes the input have space at bototm so input bars dont look crowded-->
  <div class="mb-3">
                 <label>Username</label>
                 <!---Username input-->
                 <input name="username" required class="form-control">
             </div>
-
+<!---class that makes the input have space at bototm so input bars dont look crowded-->
             <!--password label-->
             <div class="mb-3">
                 <label>Password</label>
                 <!---password input-->
                 <input type="password" name="password" required class="form-control">
             </div>
-
+<!---class that makes the input have space at bototm so input bars dont look crowded-->
             <!--Confirm password header-->
             <div class="mb-3">
                 <label>Confirm Password</label>
@@ -55,11 +56,11 @@
                 <input type="password" name="confirmPassword" required class = "form-control">
             </div>
 
-<!----submit form button-->
+<!----submit form button custom width and custom color-->
 <button type="submit" class="btn w-100" style= "background:black; color:white;">Create Account</button>
 </form>
 
-<!---Clickable link incase the user already has an account-->
+<!---Clickable link incase the user already has an account page appears red using custom styling- -->
 <p class ="text-center mt-3 register">Already have an account? <a href="/login">Login</a></p>
 
 

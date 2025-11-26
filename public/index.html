@@ -9,21 +9,32 @@
         <script src="app.js" defer></script>
     </head>
 <!--Main body of site, including header, and 2 sections (hero and table)-->
-    <body>
-         <a href="/index.html">Home</a>
-        <a href="/create.html">Create Survey</a>
-        <a href="/list.html">List Surveys</a>
-        <!---login link is hidden if the user is already logged in-->
-        <a href="/login" id="login-link">Login</a>
-        <!---logout button showed if the user is already logged in-->
-        <form id="logout-form" method="POST" action="/logout" style="display:none;display:inline;margin:0;padding:0;">
-        <button type="submit">Logout</button>
-        <header class="site">
-            <div>
-                <img src="images/logo.png" style="height:60px; margin-right:10px;">
-                <h1>SurveySimple</h1>
-            </div>
-        </header>
+<body class="login-page">
+    <nav class="Home-indexcontainer">
+
+        <a href="/index.html" class="header-link Home-index">Home</a>
+        <a href="/create.html" class="header-link Create-index">Create Survey</a>
+        <a href="/list.html" class="header-link List-index">List Surveys</a>
+
+        <a href="/login" id="login-link" class="header-link Login-index">Login</a>
+
+        <form id="logout-form" class="logout-form" method="POST" action="/logout"
+              style="display:none; display:inline; margin:0; padding:0;">
+            <button type="submit" class="header-link Logout-index" style="background:none;border:none;">
+                Logout
+            </button>
+        </form>
+
+    </nav>
+
+    <header class="site">
+        <div>
+            <img src="images/logo.png" style="height:60px; margin-right:10px;">
+            <h1>SurveySimple</h1>
+        </div>
+    </header>
+</body>
+
         
         
 <!--Hero section with two buttons to navigate to creation of survey, and viewing-->
