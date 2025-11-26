@@ -1,41 +1,58 @@
 <!---indicates to the user if it is an html document or not-->
 <!DOCTYPE html>
 <html>
-<head><meta charset="UTF-8"><title>Login</title></head>
-<body>
-
-<!--navbalinks on top of page-->
-<nav>
-<a href="/index.html">Home</a>
-<a href="/create.html">Create Survey</a>
-<a href="/list.html">List Surveys</a>
-<!---login link is hidden if the user is already logged in-->
-<a href="/login" id="login-link">Login</a>
-<!---logout button showed if the user is already logged in-->
-<form id="logout-form" method="POST" action="/logout"
-style="display:none;display:inline;margin:0;padding:0;">
-<button type="submit">Logout</button>
-</form>
+<head>
+    <meta charset="UTF-8"><title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> <!--- importBootstrap-->
+</head>
+<!---page body custom class for styling-->
+<body class = "login-page">
+    <nav class="navbar">
+<!--navbar links on top of page custom class for styling-->
+            <div class="nav-container">
+                <div class = "nav-links">
+                <a href="/index.html">Home</a>
+                <a href="/create.html">Create Survey</a>
+                <a href="/list.html">List Surveys</a>
+                <!---login link is hidden if the user is already logged in-->
+                <a href="/login" id="login-link">Login</a>
+                <!---logout button showed if the user is already logged in-->
+                <form id="logout-form" method="POST" action="/logout" style="display:none;display:inline;margin:0;padding:0;">
+                <button type="submit">Logout</button>
+                </form>
+            </div>
 </nav>
 
-<!--login header-->
-<h1>Login</h1>
-<!---Login form sends user and password to the user-->
-<form method="POST" action="/login">
+<!---centers the container and all its items-->
+<div class = "container justify-content-center align-items-center ">
+    <!--css styling sets cusotm width and adds padding so login input appear in the middle of page-->
+    <div style="width: 850px; padding-left: 420px; padding-top: 120px;">
+        <!--login header with margin at the top and bottom-->
+        <h1 class="text-center mt-5 mb-3">Login</h1>
+        <!---Login form sends user and password to the user-->
+        <form method="POST" action="/login">
+       
+            <!---class that makes the input have space at bototm so input bars dont look crowded-->
+        <div class="mb-3">
+                <label>Username</label>
+                <!---Username input-->
+                <input name="username" required class="form-control">
+            </div>
 
-<!---Username label-->
-<label>Username</label>
-<!---Username input-->
-<input name="username" required>
-<!--password label-->
-<label>Password</label>
-<!---password input-->
-<input type="password" name="password" required>
-<!--submit button-->
-<button type="submit">Login</button>
-</form>
-<!---if the user doesnt have a login it takes them to the register page-->
-<p>No account? <a href="/register">Register</a></p>
+             <!---class that makes the input have space at bototm so input bars dont look crowded-->
+            <div class="mb-3">
+                <label>Password</label>
+                <!---password input-->
+                <input type="password" name="password" required class="form-control">
+            </div>
+
+            <!--submit button with custom width and custom color-->
+            <button type="submit" class="btn w-100" style="background:black; color:white;">Login</button>
+
+        </form>
+<!---if the user doesnt have a login it takes them to the register page | register page is appears red using custom styling-->
+<p class = "text-center mt-3 register">No account? <a href="/register">Register</a></p>
 
 <!--ask backend if user is logged in-->
 <script>

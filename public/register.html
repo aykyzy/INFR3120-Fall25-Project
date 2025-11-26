@@ -1,48 +1,66 @@
 <!----Indicates that this is an html document-->
 <!DOCTYPE html>
 <html>
-<head><meta charset="UTF-8"><title>Register</title></head>
+<head>
+    <meta charset="UTF-8"><title>Register</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">  <!--- importBootstrap-->
+</head>
 <body>
-<!---Navbar links to different pages-->
-<nav>
-<a href="/index.html">Home</a>
-<a href="/create.html">Create Survey</a>
-<a href="/list.html">List Surveys</a>
-
-<!---Shows if the user is not logged in-->
-<a href="/login" id="login-link">Login</a>
-
-<!--logout button-->
-<form id="logout-form" method="POST" action="/logout" style="display:none;display:inline;margin:0;padding:0;">
-<button type="submit">Logout</button>
-</form>
+    <!---uses the same class as the login page-->
+<body class = "login-page">
+<!--navbar links on top of page custom class for styling-->
+    <nav class="navbar">
+            <div class="nav-container">
+                <div class = "nav-links">
+                <a href="/index.html">Home</a>
+                <a href="/create.html">Create Survey</a>
+                <a href="/list.html">List Surveys</a>
+                <!---login link is hidden if the user is already logged in-->
+                <a href="/login" id="login-link">Login</a>
+                <!---logout button showed if the user is already logged in-->
+                <form id="logout-form" method="POST" action="/logout" style="display:none;display:inline;margin:0;padding:0;">
+                <button type="submit">Logout</button>
+                </form>
+            </div>
 </nav>
 
+<div class = "container justify-content-center align-items-center ">
+    <div style="width: 850px; padding-left: 420px; padding-top: 120px;">
 <!----Registration form heading-->
-<h1>Register</h1>
+<h1 class="text-center mt-5 mb-3">Register</h1>
 
 <!--The registration form that is sent to the register-->
 <form method="POST" action="/register">
 <!--username input header-->
-<label>Username</label>
-<!---Username input-->
-<input name="username" required>
-<!--Paswword input header-->
-<label>Password</label>
-<!---Password input-->
-<input type="password" name="password" required>
-<!--Confirm password header-->
-<label>Confirm Password</label>
-<!--confirm password input-->
-<input type="password" name="confirmPassword" required>
 
+
+ <div class="mb-3">
+                <label>Username</label>
+                <!---Username input-->
+                <input name="username" required class="form-control">
+            </div>
+
+            <!--password label-->
+            <div class="mb-3">
+                <label>Password</label>
+                <!---password input-->
+                <input type="password" name="password" required class="form-control">
+            </div>
+
+            <!--Confirm password header-->
+            <div class="mb-3">
+                <label>Confirm Password</label>
+                <!--confirm password input-->
+                <input type="password" name="confirmPassword" required class = "form-control">
+            </div>
 
 <!----submit form button-->
-<button type="submit">Create Account</button>
+<button type="submit" class="btn w-100" style= "background:black; color:white;">Create Account</button>
 </form>
 
 <!---Clickable link incase the user already has an account-->
-<p>Already have an account? <a href="/login">Login</a></p>
+<p class ="text-center mt-3 register">Already have an account? <a href="/login">Login</a></p>
 
 
 <!----Grabs existing information of the user-->
@@ -54,9 +72,6 @@ fetch('/auth/status')
 document.getElementById("login-link").style.display = d.loggedIn?"none":"inline";
 document.getElementById("logout-form").style.display = d.loggedIn?"inline":"none";
 });
-
-
-
 </script>
 </body>
 </html>

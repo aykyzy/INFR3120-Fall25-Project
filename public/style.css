@@ -113,3 +113,42 @@ th, td {
   padding: 10px;
   border: 1px solid rgb(0, 0, 0);
 }
+
+.navbar{
+  background-color: #1f1f1f;
+  padding: 15px 30px;
+  font-family: Arial, sans-serif;
+}
+
+.nav-container {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 25px; /* spacing between links */
+  font-weight: bold;  /* bold font */
+  display: inline-block;
+  transition: transform 0.5s, color 0.5s; /* smooth hover transition */
+  font-size: 1.1rem;
+}
+
+
+/* Hover effect */
+.nav-links a:hover {
+  transform: scale(1.2); /* grow effect */
+  color: #00bfff; /* optional color change on hover */
+}
+
+
+.login-page{
+  background-color: #00bfff; /*background color */
+  font-family: 'Courier New', Courier, monospace; /*font*/
+}
+
+.register a{
+  color:red /*register*/
+}
+
