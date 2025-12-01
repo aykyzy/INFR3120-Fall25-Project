@@ -4,8 +4,15 @@ const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config();
 const authRoutes = require("./routes/auth");
+const cors = require("cors");
 
 const app = express();
+
+//Netlify addition for front end container
+app.use(cors({
+  origin: "https://692de1b7aa0805644144ed9f--rococo-florentine-503cb7.netlify.app/",
+  credentials: true
+}));
 
 // Auth additions
 const session = require("express-session");
