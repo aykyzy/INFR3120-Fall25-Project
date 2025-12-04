@@ -29,6 +29,7 @@ Adam Khan:
   - Front end + Back end cloud deployment
   - Small tweaks in server.js
   - Testing and debugging for deployment
+  - change-password.html
 
 Sahil Khan:
 

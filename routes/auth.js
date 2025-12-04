@@ -101,3 +101,47 @@ res.json({ loggedIn });
 });
 
 module.exports = router;
+
+// GET /change-password page
+router.get("/change-password", (req, res) => {
+  if (!req.session.user) return res.redirect("/login");
+  res.sendFile(path.join(__dirname, "../public/change-password.html"));
+});
+
+// POST /change-password
+router.post("/change-password", async (req, res) => {
+  try {
+    if (!req.session.user) return res.redirect("/login");
+
+    const { currentPassword, newPassword, confirmPassword } = req.body;
+
+    // Validate fields
+    if (!currentPassword || !newPassword || !confirmPassword) {
+      return res.status(400).send("All fields are required.");
+    }
+
+    if (newPassword !== confirmPassword) {
+      return res.status(400).send("New passwords do not match.");
+    }
+
+    // Load user
+    const user = await User.findById(req.session.user.id);
+    if (!user) return res.status(400).send("User not found.");
+
+    // Confirm current password
+    const match = await bcrypt.compare(currentPassword, user.password);
+    if (!match) return res.status(400).send("Current password is incorrect.");
+
+    // Hash new password
+    const hashed = await bcrypt.hash(newPassword, 10);
+
+    // Update in database
+    user.password = hashed;
+    await user.save();
+
+    res.send("Password updated successfully!");
+  } catch (err) {
+    console.error("Change password error:", err);
+    res.status(500).send("Something went wrong.");
+  }
+});
