@@ -1,4 +1,51 @@
 INFR3120 – Web and Scripting Programming  
+Project Part 3 – Final Release  
+
+Team Members
+- Sahil Khan – 100985830  
+- Mohammad Asadullah – 100959309
+- Adam Khan -   100817853
+
+Project Overview
+This is Part 3 of our Web Application project.  
+This release is the final version of our project, including:
+
+  - Error free, full functionality
+  - Easy navigation
+  - Back end, front end and database deployment (Netilfy, render, mongo)
+  - Video demonstration
+
+Live Deployment:
+
+Repo: https://github.com/aykyzy/INFR3120-Fall25-Project
+
+Front End (Netilfy): https://rococo-florentine-503cb7.netlify.app/
+
+Back End (Render): https://backend-survey-fhk4.onrender.com
+
+Contributions:
+
+Adam Khan:
+  - Front end + Back end cloud deployment
+  - Small tweaks in server.js
+  - Testing and debugging for deployment
+
+Sahil Khan:
+
+Mohammad Asadullah:
+
+Technologies Used
+- Node.js  
+- Express.js  
+- MongoDB Atlas  
+- Mongoose  
+- Express-Session  
+- Connect-Mongo  
+- HTML/CSS/JavaScript  
+
+/////////////////////////////////////////
+
+INFR3120 – Web and Scripting Programming  
 Project Part 2 – Authentication Release  
 
 Team Members
