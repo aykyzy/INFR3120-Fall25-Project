@@ -89,9 +89,20 @@ res.status(500).send("Something went wrong.");
 // POST /logout
 //end the session
 router.post("/logout", (req, res) => {
-req.session.destroy(() => {
-res.redirect("/login");
-});
+    req.session.destroy((err) => {
+        if (err) {
+            console.error("Logout error:", err);
+            return res.status(500).send("Something went wrong logging out.");
+        }
+        // remove the session cookie
+        res.clearCookie("survey.sid", {
+          sameSite: "none",
+          secure: true
+        });
+
+        // Redirect back to login page
+        return res.redirect("/login");
+    });
 });
 
 // GET /auth/status (for nav bar)
