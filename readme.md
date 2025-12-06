@@ -33,6 +33,10 @@ Adam Khan:
 
 Sahil Khan:
 
+- Updated the render to latest github commit
+- Put it up on cloud
+- Proof read to ensure no spelling mistakes
+
 Muhammad Asadullah:
 
 - Polished the website’s overall UI and layout
