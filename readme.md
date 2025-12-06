@@ -33,7 +33,11 @@ Adam Khan:
 
 Sahil Khan:
 
-Mohammad Asadullah:
+Muhammad Asadullah:
+
+- Polished the website’s overall UI and layout
+- Ensured all navigation bar links routed to the correct pages
+- Verified internal and external links for consistent functionality
 
 Technologies Used
 - Node.js  
